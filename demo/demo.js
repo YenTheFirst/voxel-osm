@@ -50,7 +50,7 @@ function create ( nodes ) {
     chunkSize: osm.chunkSize,
     chunkDistance: osm.chunkDistance,
     generate: bind(osm.generate, osm),
-    startingPosition: [0,0,0]
+    startingPosition: [0,75,0]
   })
 
   game.appendTo("#container")
