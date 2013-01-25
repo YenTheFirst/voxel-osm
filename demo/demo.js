@@ -37,18 +37,20 @@ function handleCartoDBResponse( error, response, body ) {
 
 // Create world from nodes
 function create ( nodes ) {
+  allthenodes=nodes;
   var osm = new OSM({
     startingLat: position.latitude,
     startingLng: position.longitude,
     nearbyNodes: nodes
   });
+  therealosm=osm;
 
   var game = window.game = createEngine({
     texturePath: "../textures/",
     chunkSize: osm.chunkSize,
     chunkDistance: osm.chunkDistance,
     generate: bind(osm.generate, osm),
-    startingPoint: osm.startingPoint
+    startingPosition: [0,0,0]
   })
 
   game.appendTo("#container")
